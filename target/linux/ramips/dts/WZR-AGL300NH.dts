@@ -8,6 +8,14 @@
 	compatible = "WZR-AGL300NH", "ralink,rt2880-soc";
 	model = "Buffalo WZR-AGL300NH";
 
+	pci@440000 {
+		compatible = "ralink,rt288x-pci";
+		reg = <0x00440000 0x20000>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+		status = "ok";
+	};
+
 	cfi@1f000000 {
 		compatible = "cfi-flash";
 		reg = <0x1f000000 0x800000>;
@@ -129,12 +137,4 @@
 
 &wmac {
 	ralink,mtd-eeprom = <&factory 0>;
-};
-
-&pci {
-	compatible = "ralink,rt288x-pci";
-	reg = <0x00440000 0x20000>;
-	#address-cells = <1>;
-	#size-cells = <1>;
-	status = "ok";
 };

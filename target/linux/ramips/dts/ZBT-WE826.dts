@@ -37,7 +37,7 @@
 			linux,code = <0x198>;
 		};
 	};
-}
+};
 
 &gpio0 {
 	status = "okay";
