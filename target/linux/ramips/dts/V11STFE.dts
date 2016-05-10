@@ -6,6 +6,16 @@
 	compatible = "V11ST-FE", "ralink,rt2880-soc";
 	model = "Ralink V11ST-FE";
 
+	pci@440000 {
+		status = "okay";
+
+		host-bridge {
+			pci-bridge@1 {
+				status = "okay";
+			};
+		};
+	};
+
 	nor-flash@1c000000 {
 		compatible = "cfi-flash";
 		reg = <0x1c000000 0x800000>;
@@ -70,14 +80,4 @@
 
 &wmac {
 	ralink,mtd-eeprom = <&factory 0>;
-};
-
-&pci {
-	status = "okay";
-
-	host-bridge {
-		pci-bridge@1 {
-			status = "okay";
-		};
-	};
 };

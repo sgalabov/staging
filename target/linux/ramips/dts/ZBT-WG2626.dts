@@ -15,7 +15,7 @@
 		bootargs = "console=ttyS0,115200";
 	};
 
-	palmbus {
+	palmbus: palmbus@1E000000 {
 		i2c@900 {
 			compatible = "ralink,i2c-mt7621";
 			reg = <0x900 0x100>;
